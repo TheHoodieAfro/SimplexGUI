@@ -1,25 +1,25 @@
 <template>
-    <div class="col-md-12">
+    <div class="center">
       <div class="card card-container">
         <img
           id="profile-img"
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+          src="https://www.iconpacks.net/icons/1/free-user-login-icon-305-thumb.png"
           class="profile-img-card"
         />
         <Form @submit="handleRegister" :validation-schema="schema">
           <div v-if="!successful">
             <div class="form-group">
-              <label for="username">Username</label>
+              <label for="username">Username:&nbsp;&nbsp;</label>
               <Field name="username" type="text" class="form-control" />
               <ErrorMessage name="username" class="error-feedback" />
             </div>
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email">Email:&nbsp;&nbsp;</label>
               <Field name="email" type="email" class="form-control" />
               <ErrorMessage name="email" class="error-feedback" />
             </div>
             <div class="form-group">
-              <label for="password">Password</label>
+              <label for="password">Password:&nbsp;&nbsp;</label>
               <Field name="password" type="password" class="form-control" />
               <ErrorMessage name="password" class="error-feedback" />
             </div>
@@ -44,6 +44,13 @@
           {{ message }}
         </div>
       </div>
+    </div>
+    <div class="center">
+      <img
+          id="profile-img"
+          src=""
+          class="profile-img-card"
+        />
     </div>
   </template>
   
@@ -121,3 +128,11 @@
     },
   };
   </script>
+
+<style scoped>
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+}
+</style>

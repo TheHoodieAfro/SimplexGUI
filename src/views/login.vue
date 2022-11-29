@@ -1,42 +1,26 @@
 <template>
-    <div class="col-md-12">
-      <div class="card card-container">
-        <img
-          id="profile-img"
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          class="profile-img-card"
-        />
-        <Form @submit="handleLogin" :validation-schema="schema">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <Field name="email" type="text" class="form-control" />
-            <ErrorMessage name="email" class="error-feedback" />
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <Field name="password" type="password" class="form-control" />
-            <ErrorMessage name="password" class="error-feedback" />
-          </div>
-  
-          <div class="form-group">
-            <button class="btn btn-primary btn-block" :disabled="loading">
-              <span
-                v-show="loading"
-                class="spinner-border spinner-border-sm"
-              ></span>
-              <span>Login</span>
-            </button>
-          </div>
-  
-          <div class="form-group">
-            <div v-if="message" class="alert alert-danger" role="alert">
-              {{ message }}
-            </div>
-          </div>
-        </Form>
+  <div class="center">
+    <img id="profile-img" src="https://www.iconpacks.net/icons/1/free-user-login-icon-305-thumb.png"
+      class="profile-img-card" sizes="50px"/>
+    <Form @submit="handleLogin" :validation-schema="schema">
+      <div class="form-group">
+        <label for="email">Email:&nbsp;&nbsp;</label>
+        <Field name="email" type="text" class="form-control" />
+        <ErrorMessage name="email" class="error-feedback" />
       </div>
-    </div>
-  </template>
+      <div class="form-group">
+        <label for="password">Password:&nbsp;&nbsp;</label>
+        <Field name="password" type="password" class="form-control" />
+        <ErrorMessage name="password" class="error-feedback" />
+      </div>
+      <div class="form-group">
+        <div v-if="message" class="alert alert-danger" role="alert">
+          {{ message }}
+        </div>
+      </div>
+    </Form>
+  </div>
+</template>
 
 <script>
 import { Form, Field, ErrorMessage } from "vee-validate";
@@ -93,3 +77,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 20px;
+}
+
+.form-control{
+  border-color: black;
+  border: 10px;
+}
+</style>
